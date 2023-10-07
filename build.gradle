@@ -1,7 +1,8 @@
 plugins {
-	id 'fabric-loom' version '1.4-SNAPSHOT'
-	id 'maven-publish'
-  id "org.jetbrains.kotlin.jvm" version "1.9.10"
+	id "fabric-loom" version "1.4-SNAPSHOT"
+	id "maven-publish"
+	id "org.jetbrains.kotlin.jvm" version "1.9.10"
+	id "com.diffplug.spotless" version "6.22.0"
 }
 
 version = version_major + "." + version_minor + "." + version_patch
@@ -12,7 +13,31 @@ base {
 }
 
 repositories {
-	maven { url = 'https://maven.parchmentmc.org' }
+	maven { // Parchment
+		url "https://maven.parchmentmc.org"
+	}
+	maven { // WTHIT
+		url "https://maven2.bai.lol"
+		content {
+			includeGroup "lol.bai"
+			includeGroup "mcp.mobius.waila"
+		}
+	}
+	maven { // JEI
+		url "https://maven.blamejared.com/"
+	}
+	maven { // REI
+		url "https://maven.shedaniel.me"
+	}
+	maven { // EMI, ModMenu
+		url "https://maven.terraformersmc.com/"
+	}
+	maven {  // Jade
+		url = "https://api.modrinth.com/maven"
+		content {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -26,6 +51,31 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+	modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthit_version}"
+	modCompileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+	modCompileOnly "mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${rei_version}"
+	modCompileOnly "dev.emi:emi-fabric:${emi_version}:api"
+	modCompileOnly "maven.modrinth:jade:${jade_version}"
+
+	modLocalRuntime "com.terraformersmc:modmenu:${modmenu_version}"
+	modLocalRuntime "maven.modrinth:lazydfu:${lazydfu_version}"
+
+	if(project.runtime_tooltip_mod == "jade") {
+		modLocalRuntime "maven.modrinth:jade:${jade_version}"
+	} else if(project.runtime_tooltip_mod == "wthit") {
+		modLocalRuntime "mcp.mobius.waila:wthit:fabric-${wthit_version}"
+		modLocalRuntime "lol.bai:badpackets:fabric-${badpackets_version}"
+	}
+
+	if(project.runtime_itemlist_mod == "jei") {
+		modLocalRuntime "mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"
+	} else if(project.runtime_itemlist_mod == "rei") {
+		modLocalRuntime "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+	} else if(project.runtime_itemlist_mod == "emi") {
+		modLocalRuntime "dev.emi:emi-fabric:${emi_version}"
+	}
 }
 
 processResources {
@@ -47,9 +97,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 }
 
 java {
-	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-	// if it is present.
-	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -76,5 +123,32 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+	}
+}
+
+spotless {
+	java {
+		target "src/*/java/darkarch/**/*.java"
+
+		endWithNewline()
+		indentWithTabs()
+		removeUnusedImports()
+		palantirJavaFormat()
+	}
+
+	kotlin {
+		target "src/*/kotlin/darkarch/**/*.kt"
+
+		endWithNewline()
+		indentWithTabs()
+		ktlint()
+	}
+
+	json {
+		target "src/*/resources/**/*.json"
+
+		endWithNewline()
+		indentWithSpaces()
+		prettier().config(["parser": "json"])
 	}
 }
