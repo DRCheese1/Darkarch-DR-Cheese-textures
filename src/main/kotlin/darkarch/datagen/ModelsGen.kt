@@ -8,13 +8,12 @@ import net.minecraft.data.models.ItemModelGenerators
 import net.minecraft.data.models.model.ModelTemplates
 import net.minecraft.world.item.Item
 
-class ModelsGen(output: FabricDataOutput): FabricModelProvider(output) {
+class ModelsGen(output: FabricDataOutput) : FabricModelProvider(output) {
 	override fun generateBlockStateModels(gen: BlockModelGenerators) {
-
 	}
 
 	override fun generateItemModels(gen: ItemModelGenerators) {
-		val flatItems = arrayOf(DAItems.THE_ENCHIRIDION,DAItems.GUMMY_PEARL, DAItems.FIRE_PEARL, DAItems.ICE_PEARL, DAItems.SLIME_PEARL)
+		val flatItems = arrayOf(DAItems.THE_ENCHIRIDION, DAItems.GUMMY_PEARL, DAItems.FIRE_PEARL, DAItems.ICE_PEARL, DAItems.SLIME_PEARL)
 
 		flatItems.forEach { item: Item ->
 			gen.generateFlatItem(item, ModelTemplates.FLAT_ITEM)

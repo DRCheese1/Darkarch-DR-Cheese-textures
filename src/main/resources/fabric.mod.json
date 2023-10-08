@@ -12,9 +12,7 @@
   "icon": "assets/darkarch/icon.png",
   "environment": "*",
   "entrypoints": {
-      "fabric-datagen": [
-          "darkarch.DADataGen"
-      ],
+    "fabric-datagen": ["darkarch.DADataGen"],
     "main": [
       {
         "value": "darkarch.DarkArch",
@@ -31,6 +29,6 @@
     "fabric-language-kotlin": ">=1.9.10",
     "owo-lib": "*",
     "trinkets": "*",
-      "geckolib": "*"
+    "geckolib": "*"
   }
 }

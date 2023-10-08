@@ -1,7 +1,15 @@
 {
   "item.darkarch.fire_pearl": "Fire Pearl",
+  "item.darkarch.fire_pearl.tooltip": "§o§6Pyro, Warriors, Strength",
   "item.darkarch.gummy_pearl": "Gummy Pearl",
+  "item.darkarch.gummy_pearl.tooltip": "§o§dGummy, Scholars, Knowledge",
   "item.darkarch.ice_pearl": "Ice Pearl",
+  "item.darkarch.ice_pearl.tooltip": "§o§bCryo, Sages, Eternity",
   "item.darkarch.slime_pearl": "Slime Pearl",
-  "item.darkarch.the_enchiridion": "The Enchiridion"
+  "item.darkarch.slime_pearl.tooltip": "§o§aSlime, Doctors, Health",
+  "item.darkarch.the_enchiridion": "The Enchiridion",
+  "item.darkarch.the_enchiridion.tooltip": "§o§eBook of the Great Sage",
+  "itemGroup.darkarch.darkarch": "Dark Arch",
+  "itemGroup.darkarch.darkarch.button.github": "GitHub",
+  "itemGroup.darkarch.darkarch.button.modrinth": "Modrinth"
 }
