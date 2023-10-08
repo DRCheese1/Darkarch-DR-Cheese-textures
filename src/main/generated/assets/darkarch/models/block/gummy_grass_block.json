@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "darkarch:block/gummy_grass_block_bottom",
+    "side": "darkarch:block/gummy_grass_block_side",
+    "top": "darkarch:block/gummy_grass_block_top"
+  }
+}

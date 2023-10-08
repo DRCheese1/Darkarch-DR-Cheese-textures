@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "darkarch:block/gummy_log_top",
+    "side": "darkarch:block/gummy_log"
+  }
+}

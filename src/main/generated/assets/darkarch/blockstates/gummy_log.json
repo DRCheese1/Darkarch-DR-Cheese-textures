@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "darkarch:block/gummy_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "darkarch:block/gummy_log"
+    },
+    "axis=z": {
+      "model": "darkarch:block/gummy_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package darkarch
 
+import darkarch.block.Blocks
 import darkarch.item.DAItems
 import io.wispforest.owo.itemgroup.Icon
 import io.wispforest.owo.itemgroup.OwoItemGroup
@@ -26,5 +27,6 @@ class DarkArch : ModInitializer {
 		GeckoLib.initialize()
 		ITEM_GROUP.initialize()
 		DAItems.registerItems()
+		Blocks.registerAll()
 	}
 }
