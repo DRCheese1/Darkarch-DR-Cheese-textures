@@ -1,7 +1,7 @@
 package darkarch
 
 import darkarch.block.Blocks
-import darkarch.item.DAItems
+import darkarch.item.Items
 import io.wispforest.owo.itemgroup.Icon
 import io.wispforest.owo.itemgroup.OwoItemGroup
 import io.wispforest.owo.itemgroup.gui.ItemGroupButton
@@ -13,7 +13,7 @@ class DarkArch : ModInitializer {
 	companion object {
 		const val MOD_ID: String = "darkarch"
 		val ITEM_GROUP =
-			OwoItemGroup.builder(ResourceLocation(MOD_ID, "darkarch")) { Icon.of(DAItems.THE_ENCHIRIDION) }
+			OwoItemGroup.builder(ResourceLocation(MOD_ID, "darkarch")) { Icon.of(Items.THE_ENCHIRIDION) }
 				.initializer { group ->
 					run {
 						group.addButton(ItemGroupButton.github(group, "https://github.com/toby7002/DarkArch"))
@@ -26,7 +26,7 @@ class DarkArch : ModInitializer {
 	override fun onInitialize() {
 		GeckoLib.initialize()
 		ITEM_GROUP.initialize()
-		DAItems.registerItems()
+		Items.registerItems()
 		Blocks.registerAll()
 	}
 }

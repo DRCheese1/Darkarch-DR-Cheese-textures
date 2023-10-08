@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "darkarch:gummy_log",
+    "darkarch:stripped_gummy_log"
+  ]
+}

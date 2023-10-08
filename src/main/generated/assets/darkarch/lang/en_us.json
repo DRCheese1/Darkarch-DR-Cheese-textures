@@ -1,4 +1,9 @@
 {
+  "block.darkarch.gummy_grass_block": "Gummy Grass Block",
+  "block.darkarch.gummy_leaves": "Gummy Leaves",
+  "block.darkarch.gummy_log": "Gummy Log",
+  "block.darkarch.gummy_planks": "Gummy Planks",
+  "block.darkarch.stripped_gummy_log": "Stripped Gummy Log",
   "item.darkarch.fire_pearl": "Fire Pearl",
   "item.darkarch.fire_pearl.tooltip": "§o§6Pyro, Warriors, Strength",
   "item.darkarch.gummy_pearl": "Gummy Pearl",

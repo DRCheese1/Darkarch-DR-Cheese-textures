@@ -10,7 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 
-class DAItems {
+class Items {
 	companion object {
 		val THE_ENCHIRIDION: Item = register("the_enchiridion", TheEnchiridion())
 		val GUMMY_PEARL: Item = register("gummy_pearl", GummyPearl())
