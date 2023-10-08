@@ -26,18 +26,25 @@ repositories {
 	maven { // JEI
 		url "https://maven.blamejared.com/"
 	}
-	maven { // REI
+	maven { // REI, Cloth Config
 		url "https://maven.shedaniel.me"
 	}
 	maven { // EMI, ModMenu
 		url "https://maven.terraformersmc.com/"
 	}
+    maven { // Trinkets
+        url "https://maven.ladysnake.org/releases"
+    }
+    maven { // owo-lib
+        url "https://maven.wispforest.io"
+    }
 	maven {  // Jade
-		url = "https://api.modrinth.com/maven"
+		url "https://api.modrinth.com/maven"
 		content {
 			includeGroup "maven.modrinth"
 		}
 	}
+    mavenCentral()
 }
 
 dependencies {
@@ -51,6 +58,15 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+    modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+    modImplementation "dev.emi:trinkets:${trinkets_version}"
+
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${clothconfig_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+
+    include "io.wispforest:owo-sentinel:${project.owo_version}"
 
 	modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthit_version}"
 	modCompileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
