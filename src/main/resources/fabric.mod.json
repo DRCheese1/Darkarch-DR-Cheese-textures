@@ -3,13 +3,12 @@
   "id": "darkarch",
   "version": "${version}",
   "name": "Dark Arch",
-  "description": "This is an example description! Tell everyone what your mod is about!",
-  "authors": ["Me!"],
+  "description": "A Fabric magic mod that makes your Minecraft darker",
+  "authors": ["toby7002"],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/toby7002/DarkArch"
   },
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/darkarch/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -27,8 +26,8 @@
     "java": ">=17",
     "fabric-api": "*",
     "fabric-language-kotlin": ">=1.9.10",
-    "yet_another_config_lib_v3": "*",
     "owo-lib": "*",
-    "trinkets": "*"
+    "trinkets": "*",
+      "geckolib": "*"
   }
 }
