@@ -10,6 +10,10 @@ import net.minecraft.world.item.Item
 class DAItems {
 	companion object {
 		val THE_ENCHIRIDION: Item = register("the_enchiridion", Item(OwoItemSettings().group(DarkArch.ITEM_GROUP)))
+		val GUMMY_PEARL: Item = register("gummy_pearl", Item(OwoItemSettings().group(DarkArch.ITEM_GROUP)))
+		val FIRE_PEARL: Item = register("fire_pearl", Item(OwoItemSettings().group(DarkArch.ITEM_GROUP)))
+		val ICE_PEARL: Item = register("ice_pearl", Item(OwoItemSettings().group(DarkArch.ITEM_GROUP)))
+		val SLIME_PEARL: Item = register("slime_pearl", Item(OwoItemSettings().group(DarkArch.ITEM_GROUP)))
 
 		private fun register(
 			name: String,

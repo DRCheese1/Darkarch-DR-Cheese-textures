@@ -12,6 +12,9 @@
   "icon": "assets/darkarch/icon.png",
   "environment": "*",
   "entrypoints": {
+      "fabric-datagen": [
+          "darkarch.DADataGen"
+      ],
     "main": [
       {
         "value": "darkarch.DarkArch",
